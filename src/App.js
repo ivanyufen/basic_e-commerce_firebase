@@ -20,7 +20,8 @@ class App extends React.Component {
                 <div id="route">
                     <Route exact path="/" component={Home}></Route>
                     <Route path="/AddProduct" component={AddProduct}></Route>
-                    <Route path="/product/:productName" component={ProductDetail} />
+                    <Route path="/product/:productName" component={ProductDetail}></Route>
+                    <Route path="/cart" component={Cart}></Route>
                 </div>
 
             </React.Fragment>

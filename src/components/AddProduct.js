@@ -76,7 +76,7 @@ class AddProduct extends React.Component {
     componentDidUpdate() {
         if (this.state.isAdded === true) {
             setTimeout(() => {
-                alert("Product successfully added! Redirecting you back to Home")
+                alert("Product successfully added!")
                 window.location = "/"
             }, 100);
 
