@@ -36,7 +36,7 @@ class Cart extends React.Component {
                         <div className="col-lg-6">
                             <p>Nama: {val.productName}</p>
                             <p>Harga: {val.productPrice}</p>
-                            <img src={val.productImage || `https://screenshotlayer.com/images/assets/placeholder.png`} style={{ width: "100px", height: "100px" }} />
+                            <img className="rounded" src={val.productImage || `https://screenshotlayer.com/images/assets/placeholder.png`} style={{ width: "80px", height: "80px" }} />
                         </div>
                         <div className="col-lg-6">
                             <button className="btn btn-warning">Pay now!</button>
