@@ -6,9 +6,6 @@ class ProductDetail extends React.Component {
     constructor() {
         super();
         this.state = {
-            productName: "",
-            productPrice: "",
-            productImage: "",
             allData: []
         }
     }
@@ -34,6 +31,32 @@ class ProductDetail extends React.Component {
             })
     }
 
+    addToCart = () => {
+        console.log(this.state.allData[0].productName)
+        const db = Fire.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        })
+        db.collection("cart").add({
+            productName: this.state.allData[0].productName,
+            productPrice: this.state.allData[0].productPrice,
+            timeAdded: new Date(),
+            productImage: this.state.allData[0].productImage
+        });
+        setTimeout(() => {
+            alert("Successfully added to cart!")
+            // this.setState({
+            //     productName: "",
+            //     productPrice: "",
+            //     fileURL: "",
+            //     isUpload: false,
+            //     fileName: "",
+            //     uploadProgress: 0,
+            //     isAdded: true
+            // })
+        }, 1000);
+    }
+
     displayRetrievedData() {
         return this.state.allData.map(
             (val) => {
@@ -45,7 +68,7 @@ class ProductDetail extends React.Component {
                         <div className="col-lg-6">
                             <h2>Nama Produk: {val.productName}</h2>
                             <h2>Harga: {val.productPrice}</h2>
-                            <button type="button" className="btn btn-danger">Add to cart!</button>
+                            <button className="btn btn-danger" onClick={this.addToCart}>Add to cart</button>
                         </div>
                     </div>
                 </div>

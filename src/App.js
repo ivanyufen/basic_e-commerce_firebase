@@ -16,6 +16,9 @@ class App extends React.Component {
                 <Link to="/">
                     <img src="http://imagama.feb.ugm.ac.id/wp-content/uploads/2016/06/ecaca552d9f35d2765f502ad3c4a6f9d.jpg" style={{ display: "block", margin: "0px auto" }} />
                 </Link>
+                <Link to="/cart">
+                    <button className="btn btn-warning d-block mx-auto m-3">My cart</button>
+                </Link>
 
                 <div id="route">
                     <Route exact path="/" component={Home}></Route>
