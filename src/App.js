@@ -34,6 +34,7 @@ class App extends React.Component {
                 <Link to="/">
                     <img src="http://imagama.feb.ugm.ac.id/wp-content/uploads/2016/06/ecaca552d9f35d2765f502ad3c4a6f9d.jpg" style={{ display: "block", margin: "0px auto" }} />
                 </Link>
+
                 {/* Kalau udh login, button berubah jadi nama dan profpict, kalau belum jadi login */}
                 <button onClick={this.login} className="btn btn-primary d-block mx-auto m-2">{this.state.user ?
                     (<div>
@@ -47,7 +48,7 @@ class App extends React.Component {
                 {/* Setelah login baru ada button log out */}
                 {this.state.isLoggedIn && <button type="button" className="btn btn-danger d-block mx-auto m-1" onClick={this.logout}>Log Out</button>}
 
-                {/* Kalau logged in, bisa liat cart */}
+                {/* Kalau log in, bisa liat cart */}
                 {this.state.isLoggedIn &&
                     <Link to="/cart">
                         <button className="btn btn-warning d-block mx-auto m-3">My cart</button>
@@ -56,6 +57,7 @@ class App extends React.Component {
 
 
                 <div id="route">
+                    {/* Kasi props ke component Home via router react */}
                     <Route
                         exact path='/'
                         render={(props) => <Home {...props} isLoggedIn={this.state.isLoggedIn} />}

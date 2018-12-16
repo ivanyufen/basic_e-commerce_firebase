@@ -13,6 +13,7 @@ class Home extends React.Component {
         }
     }
 
+    // Ambil semua data di database 
     componentDidMount() {
         const db = Fire.firestore();
         db.settings({
@@ -33,8 +34,10 @@ class Home extends React.Component {
     }
 
     displayData() {
+        // Kalau ada data, tampilin, kalau gaada, tampilin no data
         if (this.state.allData) {
             return this.state.allData.map((val) => {
+                // lempar props nama, harga, dan foto produk ke component product card
                 return <ProductCard productName={val.productName} productPrice={val.productPrice} productImage={val.productImage} />
             })
         }
@@ -51,6 +54,7 @@ class Home extends React.Component {
                 <div className="container text-center">
                     <h3>Showing you a list of products:</h3>
 
+                    {/* Kalau log in, baru bisa add product */}
                     {this.props.isLoggedIn &&
                         <Link to="/AddProduct">Click here to add product!</Link>
                     }

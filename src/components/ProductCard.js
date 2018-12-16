@@ -17,15 +17,6 @@ class ProductCard extends React.Component {
         });
         setTimeout(() => {
             alert("Successfully added to cart!")
-            // this.setState({
-            //     productName: "",
-            //     productPrice: "",
-            //     fileURL: "",
-            //     isUpload: false,
-            //     fileName: "",
-            //     uploadProgress: 0,
-            //     isAdded: true
-            // })
         }, 1000);
     }
 
