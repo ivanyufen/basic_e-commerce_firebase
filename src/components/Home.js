@@ -50,7 +50,11 @@ class Home extends React.Component {
             <React.Fragment>
                 <div className="container text-center">
                     <h3>Showing you a list of products:</h3>
-                    <Link to="/AddProduct">Click here to add product!</Link>
+
+                    {this.props.isLoggedIn &&
+                        <Link to="/AddProduct">Click here to add product!</Link>
+                    }
+
                     <div className="row">
                         {this.state.isLoading && <Loader text="Loading products.." />}
                         {this.displayData()}

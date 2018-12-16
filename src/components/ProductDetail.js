@@ -32,7 +32,6 @@ class ProductDetail extends React.Component {
     }
 
     addToCart = () => {
-        console.log(this.state.allData[0].productName)
         const db = Fire.firestore();
         db.settings({
             timestampsInSnapshots: true
